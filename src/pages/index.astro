@@ -1,0 +1,136 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hurozo — support wedge, working preview</title>
+<style is:global>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap');
+:root{
+  --paper:#FFFFFF; --paper-2:#FAFAFA; --paper-3:#F2F2F2;
+  --rule:#E5E5E5; --rule-2:#D1D1D1;
+  --ink:#000; --ink-2:#1A1A1A; --ink-3:#4A4A4A; --ink-4:#767676; --ink-5:#A3A3A3;
+  --signal:#E25E2E; --signal-press:#C24A1F; --signal-tint:#FBE7DD; --signal-tint-2:#FDF1EB;
+  --ok:#1F7A4D; --dot-done:#369A66;
+  --mono:'IBM Plex Mono',ui-monospace,monospace; --body:'Switzer','IBM Plex Sans',sans-serif; --display:'IBM Plex Sans',sans-serif;
+  --r-2:4px; --r-3:6px; --r-4:10px; --sh-1:0 1px 2px rgba(0,0,0,0.05);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--body);color:var(--ink-2);background:var(--paper-2);-webkit-font-smoothing:antialiased;font-size:15px;}
+.wrap{max-width:1060px;margin:0 auto;padding:64px 32px 88px;}
+.label{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:0.11em;text-transform:uppercase;color:var(--ink-4);}
+.brand{display:flex;align-items:center;gap:11px;margin-bottom:40px;}
+.logo{width:30px;height:30px;border-radius:var(--r-2);background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:16px;}
+.brand .bn{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-0.01em;color:var(--ink);}
+.brand .tag{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--signal-press);background:var(--signal-tint-2);border:1px solid var(--signal-tint);border-radius:100px;padding:4px 11px;letter-spacing:0.04em;}
+.head{max-width:720px;margin-bottom:44px;}
+.head .eyebrow{margin-bottom:14px;display:inline-block;}
+.head h1{font-family:var(--display);font-weight:600;font-size:34px;letter-spacing:-0.026em;line-height:1.1;color:var(--ink);margin-bottom:14px;}
+.head p{font-size:17px;color:var(--ink-3);line-height:1.55;}
+.head p b{color:var(--ink-2);font-weight:600;}
+
+.sec{margin-bottom:34px;}
+.sech{font-family:var(--mono);font-size:10.5px;letter-spacing:0.09em;text-transform:uppercase;color:var(--ink-4);margin-bottom:14px;padding-bottom:9px;border-bottom:1px solid var(--rule);}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.grid.two{grid-template-columns:repeat(2,1fr);}
+.card{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-4);padding:20px;text-decoration:none;color:inherit;transition:.15s;box-shadow:var(--sh-1);}
+.card:hover{border-color:var(--rule-2);transform:translateY(-2px);box-shadow:0 12px 30px -18px rgba(0,0,0,0.22);}
+.card.lead{border-left:2px solid var(--signal);}
+.ctop{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.cnum{font-family:var(--mono);font-size:10px;color:var(--ink-5);}
+.cgo{font-family:var(--mono);font-size:11px;color:var(--signal-press);display:inline-flex;align-items:center;gap:5px;}
+.card h3{font-family:var(--display);font-weight:600;font-size:16.5px;letter-spacing:-0.012em;color:var(--ink);margin-bottom:7px;}
+.card p{font-size:12.5px;color:var(--ink-3);line-height:1.45;}
+.chip{margin-top:12px;font-family:var(--mono);font-size:9px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-4);border:1px solid var(--rule-2);border-radius:100px;padding:3px 9px;align-self:flex-start;}
+.note{margin-top:30px;border:1px solid var(--rule);border-left:2px solid var(--ink);border-radius:var(--r-3);background:var(--paper);padding:15px 20px;font-size:13px;color:var(--ink-3);line-height:1.5;}
+.note b{color:var(--ink-2);}
+.foot{margin-top:40px;font-family:var(--mono);font-size:10.5px;color:var(--ink-5);display:flex;align-items:center;gap:8px;}
+@media(max-width:860px){.grid,.grid.two{grid-template-columns:1fr;}.head h1{font-size:26px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <span class="logo">H</span><span class="bn">Hurozo</span>
+    <span class="tag">working preview &middot; support wedge</span>
+  </div>
+
+  <div class="head">
+    <span class="eyebrow label">Internal preview</span>
+    <h1>Take control of your AI customer support.</h1>
+    <p>The support wedge, built out as clickable surfaces. Start with the homepage, then walk the offer and the full service catalogue. <b>Everything here is a working draft for exploration, not final copy.</b></p>
+  </div>
+
+  <div class="sec">
+    <div class="sech">Start here</div>
+    <div class="grid">
+      <a class="card lead" href="home.html">
+        <div class="ctop"><span class="cnum">01</span><span class="cgo">open &rarr;</span></div>
+        <h3>The homepage</h3>
+        <p>The full front door: hero, self-select pains, the 6-tab live demo, the platform of jobs, governance, and pricing teaser.</p>
+        <span class="chip">v6 &middot; the main surface</span>
+      </a>
+      <a class="card" href="pricing.html">
+        <div class="ctop"><span class="cnum">02</span><span class="cgo">open &rarr;</span></div>
+        <h3>Pricing</h3>
+        <p>Real, calculatable tiers with a live volume estimator and the bring-your-own-model lane. Priced like a team, not a taxi meter.</p>
+        <span class="chip">Free &middot; €490 &middot; €1,490 &middot; custom</span>
+      </a>
+      <a class="card" href="catalogue.html">
+        <div class="ctop"><span class="cnum">03</span><span class="cgo">open &rarr;</span></div>
+        <h3>Service catalogue</h3>
+        <p>All fifteen support jobs scored on value, frustration, and Hurozo edge, plus the five-stage spine that runs the whole arena end to end.</p>
+        <span class="chip">the rich landscape</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sech">The arguments, as standalone studies</div>
+    <div class="grid">
+      <a class="card" href="governance.html">
+        <div class="ctop"><span class="cnum">04</span><span class="cgo">open &rarr;</span></div>
+        <h3>Governance, staffed</h3>
+        <p>The objection-killer: Logger, Secretary, and Reviewer mapped to AI Act Articles 12, 13, and 14, turned into staff.</p>
+        <span class="chip">AI Act mapping</span>
+      </a>
+      <a class="card" href="how-it-works.html">
+        <div class="ctop"><span class="cnum">05</span><span class="cgo">open &rarr;</span></div>
+        <h3>How it works</h3>
+        <p>The differentiator zig-zag: canonical core with drift flags, workers that evolve, build-in-Claude-and-import, EU-resident, owned.</p>
+        <span class="chip">5 beats</span>
+      </a>
+      <a class="card" href="compare.html">
+        <div class="ctop"><span class="cnum">06</span><span class="cgo">open &rarr;</span></div>
+        <h3>Why not the alternatives</h3>
+        <p>Hurozo against AI support bots, DIY stacks, and more headcount, across the seven questions a buyer actually asks.</p>
+        <span class="chip">comparison whiteboard</span>
+      </a>
+      <a class="card" href="crew.html">
+        <div class="ctop"><span class="cnum">07</span><span class="cgo">open &rarr;</span></div>
+        <h3>The crew, as set cards</h3>
+        <p>Each worker as a job done end to end: the pain, the chain with a human gate, the win, the tools, and the receipt.</p>
+        <span class="chip">crew set cards</span>
+      </a>
+      <a class="card" href="platform.html">
+        <div class="ctop"><span class="cnum">08</span><span class="cgo">open &rarr;</span></div>
+        <h3>The platform grid</h3>
+        <p>The six platform areas as living mini-mocks: Support Agents, Analytics, Signal Tracking, Routing, Governance, and the Bridge.</p>
+        <span class="chip">platform of jobs</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>For Dennis:</b> click through in order if you like, or jump anywhere. The homepage and the service catalogue are the two I most want your read on. Copy, names (&ldquo;Hurozo&rdquo;, &ldquo;the Bridge&rdquo;), and numbers are all still in play, so react to the shape and the story, not the polish.
+  </div>
+
+  <div class="foot"><span class="logo" style="width:16px;height:16px;font-size:9px;border-radius:2px">H</span>Hurozo &middot; working name &middot; support wedge preview</div>
+
+</div>
+</body>
+</html>
