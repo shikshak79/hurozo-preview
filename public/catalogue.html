@@ -125,6 +125,14 @@ body{font-family:var(--body);color:var(--ink-2);background:var(--paper-2);-webki
   .legend{gap:16px;}
 }
 
+/* control plane */
+.cptag{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:0.09em;text-transform:uppercase;color:var(--ink-4);margin-top:52px;}
+.cpframe{margin:14px 0 26px;border-left:2px solid var(--signal);padding:6px 0 6px 20px;max-width:840px;}
+.cpframe .cpq{font-family:var(--display);font-weight:600;font-size:23px;letter-spacing:-0.02em;color:var(--ink);line-height:1.3;}
+.cpframe .cpsub{font-size:14px;color:var(--ink-3);line-height:1.55;margin-top:10px;}
+.fam.cp .famh .fn::before{content:"";display:inline-block;width:7px;height:7px;border-radius:2px;background:var(--signal);margin-right:9px;vertical-align:middle;}
+.jdemo{font-family:var(--mono);font-size:10.5px;color:var(--signal-press);text-decoration:none;white-space:nowrap;border-bottom:1px solid var(--signal-tint);}
+.jdemo:hover{border-color:var(--signal-press);}
 /* Hurozo ledger texture, signature */
 :root{--ledger-line:rgba(0,0,0,0.055);--ledger-gap:32px;}
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--ledger-gap) - 1px),var(--ledger-line) calc(var(--ledger-gap) - 1px),var(--ledger-line) var(--ledger-gap));}
@@ -136,7 +144,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <div class="head">
     <span class="eyebrow label">The service catalogue</span>
     <h1>The whole support landscape. <u>And the spine that runs the arena.</u></h1>
-    <p>Every job a support team runs, scored on three axes: how much it&rsquo;s worth, how much it hurts today, and how far ahead Hurozo is on it. <b>The highlighted jobs aren&rsquo;t the richest four. They&rsquo;re the ones that chain into a complete operation, end to end.</b></p>
+    <p>Every job a support team runs, scored on three axes: how much it&rsquo;s worth, how much it hurts today, and how far ahead Hurozo is on it. First the support jobs and the spine that chains them into a complete operation. Then <b>the control plane: the finance, IT, and security jobs that make AI support safe to buy.</b></p>
   </div>
 
   <div class="legend">
@@ -151,6 +159,33 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <!-- FAMILY A: Intake -->
   <div class="fam">
     <div class="famh"><span class="fn">Intake &amp; prioritization</span><span class="fs">the queue, before you touch it</span></div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Priority &amp; SLA triage</div>
+        <div class="jd">Sort by the SLA clock and priority, so the tickets closest to a breach surface first.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Triage</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Sentiment on intake</div>
+        <div class="jd">Tag mood and intent as tickets land, so anger and urgency are visible at first glance.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Triage</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+      </div>
+    </div>
+
 
     <div class="job pri">
       <div class="jmain">
@@ -196,6 +231,33 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <div class="fam">
     <div class="famh"><span class="fn">Respond</span><span class="fs">a first reply worth sending</span></div>
 
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Multilingual reply</div>
+        <div class="jd">Draft in the customer&rsquo;s language, checked against your canon, so a small team covers many markets.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>First Reply</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Proactive outreach</div>
+        <div class="jd">When a known issue hits many accounts, draft the heads-up before they write in.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>First Reply</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+      </div>
+    </div>
+
+
     <div class="job pri">
       <div class="jmain">
         <div class="jt">First response, drafted <span class="pflag"><span class="dia">&#9670;</span> arena spine</span></div>
@@ -239,6 +301,33 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <!-- FAMILY C: Resolve -->
   <div class="fam">
     <div class="famh"><span class="fn">Resolve</span><span class="fs">the decision, within policy</span></div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Order &amp; account actions</div>
+        <div class="jd">Look up, update, or correct an order or account, gated, so the fix happens without five systems.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Refund Drafter</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Knowledge-gap capture</div>
+        <div class="jd">When the canon can&rsquo;t answer, capture the gap and draft the missing doc for review.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Canon Keeper</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+      </div>
+    </div>
+
 
     <div class="job pri">
       <div class="jmain">
@@ -284,6 +373,33 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <div class="fam">
     <div class="famh"><span class="fn">Retain &amp; risk</span><span class="fs">the churn hidden in the queue</span></div>
 
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">CSAT recovery</div>
+        <div class="jd">Spot a bad rating early and route a save, before it becomes a churn or a public review.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Escalation Spotter</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Win-back on cancel</div>
+        <div class="jd">On a cancel signal, draft a retention offer within policy, held for a human.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Churn Watcher</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+      </div>
+    </div>
+
+
     <div class="job pri">
       <div class="jmain">
         <div class="jt">Escalation spotting <span class="pflag"><span class="dia">&#9670;</span> arena spine</span></div>
@@ -328,6 +444,33 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <div class="fam">
     <div class="famh"><span class="fn">Learn &amp; prove</span><span class="fs">the story for leadership and the regulator</span></div>
 
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Trend alerts to product</div>
+        <div class="jd">When a new issue spikes, alert product with the tickets and the impact, not a monthly digest.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Theme Miner</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Coaching cards</div>
+        <div class="jd">Turn quality flags into per-agent coaching notes, so the team improves on its own results.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>QA Reviewer</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+      </div>
+    </div>
+
+
     <div class="job pri">
       <div class="jmain">
         <div class="jt">Report to leadership &amp; regulators <span class="pflag"><span class="dia">&#9670;</span> arena spine</span></div>
@@ -362,50 +505,6 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
       <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>QA Reviewer</span></div>
       <div class="jscore">
         <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
-        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
-        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- FAMILY F: Run & cost -->
-  <div class="fam">
-    <div class="famh"><span class="fn">Run &amp; cost</span><span class="fs">who runs the models, and what they cost</span></div>
-
-    <div class="job">
-      <div class="jmain">
-        <div class="jt">Bring your own model</div>
-        <div class="jd">Point a crew at your own Anthropic, Google, or OpenAI contract, or a model you host. Pay the provider at cost, no markup, no lock-in.</div>
-      </div>
-      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Model Bridge</span></div>
-      <div class="jscore">
-        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
-        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
-        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="jmain">
-        <div class="jt">Model mix, watched</div>
-        <div class="jd">See which models each crew runs and in what share, with the router picking the cheapest one that still clears your quality bar.</div>
-      </div>
-      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Model Router</span></div>
-      <div class="jscore">
-        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
-        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
-        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="jmain">
-        <div class="jt">Cost per crew and company</div>
-        <div class="jd">What every worker, every crew, and the whole company spends on AI, on one screen, trending down as more of the desk routes through Hurozo.</div>
-      </div>
-      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>The Bridge</span></div>
-      <div class="jscore">
-        <span class="ax"><span class="axl">V</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
         <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
         <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
       </div>
@@ -464,6 +563,180 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     <div class="arenabar">
       <div class="abq">One ticket, the whole way through. That&rsquo;s the arena.</div>
       <div class="abs"><span><span class="dot done"></span>one canon</span><span><span class="dot gate"></span>one gate</span><span><span class="dot done"></span>one log</span><span><span class="dot done"></span>one owner</span></div>
+    </div>
+  </div>
+
+  <div class="cptag">The control plane</div>
+  <div class="cpframe">
+    <div class="cpq">Support is the wedge. The control plane is the moat.</div>
+    <div class="cpsub">Primary job: run customer support. Secondary jobs: run the control plane around it, for finance, IT, security, and legal. One governed crew serves both, so support is where you land and governance is why you stay. The highlighted jobs open a live demo in the console.</div>
+  </div>
+
+  <div class="fam cp">
+    <div class="famh"><span class="fn">Finance</span><span class="fs">run the money around the crew</span></div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Manage inference spend <span class="pflag"><span class="dia">&#9670;</span> live demo</span></div>
+        <div class="jd">Keep per-ticket and per-workflow model cost under control as usage grows, so AI stays profitable. <a class="jdemo" href="dashboard.html#cost">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Model Router</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Right model for the task</div>
+        <div class="jd">Cheap models for routine work, stronger ones reserved for high-stakes cases, with logs showing why. <a class="jdemo" href="dashboard.html#cost">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Model Router</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Budget &amp; forecast spend</div>
+        <div class="jd">Token, fallback, and routing metrics finance can forecast on, instead of a surprise bill. <a class="jdemo" href="dashboard.html#roi">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>The Bridge</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Prove ROI on automation <span class="pflag"><span class="dia">&#9670;</span> live demo</span></div>
+        <div class="jd">Savings and deflection measurable by workflow, so scaling it is a decision, not a hope. <a class="jdemo" href="dashboard.html#roi">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>The Bridge</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="fam cp">
+    <div class="famh"><span class="fn">IT &amp; architecture</span><span class="fs">run the platform under the crew</span></div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Oversee IT security <span class="pflag"><span class="dia">&#9670;</span> live demo</span></div>
+        <div class="jd">Clear permissions, boundaries, and logs wherever AI touches customer data, so exposure is inspectable. <a class="jdemo" href="dashboard.html#permissions">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>The Secretary</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Control agent sprawl</div>
+        <div class="jd">One governed runtime and policy layer, so teams stop spinning up shadow agents across tools. <a class="jdemo" href="dashboard.html#overview">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>The Bridge</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Keep it portable</div>
+        <div class="jd">Switch model or hosting without a rewrite, so a vendor&rsquo;s pricing or capability change can&rsquo;t trap you. <a class="jdemo" href="trust.html">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Model Bridge</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Operational reliability</div>
+        <div class="jd">Routing, fallback, and rollback visible, so a provider outage is contained, not an incident. <a class="jdemo" href="trust.html">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>The Bridge</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="fam cp">
+    <div class="famh"><span class="fn">Security, risk &amp; legal</span><span class="fs">prove it to the regulator</span></div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Oversee AI Act compliance <span class="pflag"><span class="dia">&#9670;</span> live demo</span></div>
+        <div class="jd">Logging, transparency, and human oversight built in, so you show compliance instead of promising it. <a class="jdemo" href="dashboard.html#evidence">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Logger + Reviewer</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Detect policy breaches</div>
+        <div class="jd">Behaviour outside the rules flagged before it reaches a customer, so a drift never becomes a report. <a class="jdemo" href="dashboard.html#reviewer">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>The Reviewer</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Maintain audit evidence</div>
+        <div class="jd">A complete record of reads, drafts, approvals, and sends, so &lsquo;what happened?&rsquo; has a fast answer. <a class="jdemo" href="dashboard.html#evidence">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>The Logger</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Data residency &amp; exposure</div>
+        <div class="jd">EU-resident or self-hosted, BYO model, so security and procurement have a clear approval path. <a class="jdemo" href="trust.html">open the demo &rarr;</a></div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>The Secretary</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
     </div>
   </div>
 

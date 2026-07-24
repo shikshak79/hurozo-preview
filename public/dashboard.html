@@ -129,6 +129,18 @@ td.mono,th.mono{font-family:var(--mono);font-size:11.5px;}
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-size:13px;padding:11px 18px;border-radius:var(--r-3);box-shadow:0 10px 30px -10px rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:.25s;z-index:99;display:flex;align-items:center;gap:9px;}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 .toast .dot{width:7px;height:7px;}
+.tl{position:relative;padding-left:26px;}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--rule);}
+.tlrow{position:relative;padding:0 0 20px 0;}
+.tlrow:last-child{padding-bottom:0;}
+.tlrow .tld{position:absolute;left:-22px;top:2px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--dot-done);}
+.tlrow.gate .tld{border-color:var(--signal);}
+.tlrow .tlh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap;}
+.tlrow .tlt{font-family:var(--display);font-weight:600;font-size:13.5px;color:var(--ink);}
+.tlrow .tltime{font-family:var(--mono);font-size:10.5px;color:var(--ink-5);}
+.tlrow .tlwho{font-family:var(--mono);font-size:10.5px;color:var(--ink-4);margin-left:auto;}
+.tlrow .tlp{font-size:12.5px;color:var(--ink-3);line-height:1.5;}
+.tlrow .tlart{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-family:var(--mono);font-size:9.5px;color:var(--ink-4);border:1px solid var(--rule);border-radius:100px;padding:3px 9px;}
 .demoflag{position:fixed;top:64px;right:16px;font-family:var(--mono);font-size:10px;color:var(--ink-4);background:var(--paper);border:1px solid var(--rule);border-radius:100px;padding:4px 11px;z-index:40;}
 </style>
 </head>
@@ -154,6 +166,7 @@ td.mono,th.mono{font-family:var(--mono);font-size:11.5px;}
     <div class="navlbl">Govern</div>
     <nav class="nav">
       <a href="#audit" data-view="audit"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg><span class="t">Audit log</span></a>
+      <a href="#evidence" data-view="evidence"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 14l2 2 4-4"/></svg><span class="t">Evidence pack</span></a>
       <a href="#approvals" data-view="approvals"><svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M9 7l-5 5 5 5"/><path d="M15 7l5 5-5 5"/></svg><span class="t">Approvals</span><span class="badge" id="apprBadge">3</span></a>
       <a href="#reviewer" data-view="reviewer"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 4.5-3 8-8 9-5-1-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><span class="t">Reviewer</span></a>
       <a href="#permissions" data-view="permissions"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span class="t">Permissions</span></a>
@@ -348,6 +361,23 @@ td.mono,th.mono{font-family:var(--mono);font-size:11.5px;}
             <tr><td class="mono">09:33</td><td>Plan change, #4448</td><td class="mono">answer-from-canon</td><td><span class="pill ok">pass</span></td></tr>
           </tbody>
         </table></div>
+      </div>
+    </section>
+
+    <!-- EVIDENCE PACK -->
+    <section class="view" id="v-evidence">
+      <div class="vhead"><div><h1>Evidence pack</h1><div class="sub">One ticket, intake to send, with the full governance trail. This is what you hand a regulator.</div></div>
+        <div style="display:flex;gap:9px;align-items:center"><span class="art"><b>Art 12 / 13 / 14</b></span><button class="btn pri" onclick="toast('Evidence pack exported. ticket-4471-evidence.pdf')">Export evidence pack</button></div></div>
+      <div class="card"><div class="ch"><h3>Ticket #4471 &middot; Refund, damaged on arrival</h3><span class="mono">Northwind &middot; resolved, first contact</span></div>
+        <div class="cb" style="padding:20px 22px"><div class="tl">
+          <div class="tlrow"><span class="tld"></span><div class="tlh"><span class="tlt">Received &amp; classified</span><span class="tltime">09:38:05</span><span class="tlwho">Triage</span></div><div class="tlp">Read, tagged &ldquo;refund / damaged&rdquo;, routed to the refunds crew. Language and history captured.</div><span class="tlart"><span class="dot done"></span>logged &middot; Art 12</span></div>
+          <div class="tlrow"><span class="tld"></span><div class="tlh"><span class="tlt">Context gathered</span><span class="tltime">09:38:47</span><span class="tlwho">Context Gatherer</span></div><div class="tlp">Order #4471 pulled: value &euro;48.00, 4-year customer, policy check &ldquo;refund ok&rdquo;. No five-system click-through.</div><span class="tlart"><span class="dot done"></span>sources on file</span></div>
+          <div class="tlrow"><span class="tld"></span><div class="tlh"><span class="tlt">Reply drafted</span><span class="tltime">09:41:22</span><span class="tlwho">Refund Drafter</span></div><div class="tlp">Full refund of &euro;48.00 drafted, tone matched, facts checked. Model: Claude Sonnet. Nothing sent.</div><span class="tlart"><span class="dot done"></span>draft retained</span></div>
+          <div class="tlrow"><span class="tld"></span><div class="tlh"><span class="tlt">Checked against rules</span><span class="tltime">09:41:26</span><span class="tlwho">Reviewer</span></div><div class="tlp">Passed refund-policy and tone-and-voice. AI-disclosure present. No breach.</div><span class="tlart"><span class="dot done"></span>pass &middot; disclosure on &middot; Art 13</span></div>
+          <div class="tlrow gate"><span class="tld"></span><div class="tlh"><span class="tlt">Held for a human</span><span class="tltime">09:41:27</span><span class="tlwho">Secretary</span></div><div class="tlp">Over the auto-send threshold, routed to a person to approve. This is the oversight gate.</div><span class="tlart"><span class="dot gate"></span>&#9670; your call &middot; Art 14</span></div>
+          <div class="tlrow"><span class="tld"></span><div class="tlh"><span class="tlt">Approved</span><span class="tltime">09:44:10</span><span class="tlwho">Sana, team lead</span></div><div class="tlp">Reviewed the draft and the facts, approved without edits.</div><span class="tlart"><span class="dot done"></span>who approved, on record</span></div>
+          <div class="tlrow"><span class="tld"></span><div class="tlh"><span class="tlt">Sent &amp; sealed</span><span class="tltime">09:44:11</span><span class="tlwho">First Reply</span></div><div class="tlp">Delivered to the customer, refund issued, wrap-up summarized. The trail is sealed and exportable.</div><span class="tlart"><span class="dot done"></span>sealed &middot; exportable</span></div>
+        </div></div>
       </div>
     </section>
 
