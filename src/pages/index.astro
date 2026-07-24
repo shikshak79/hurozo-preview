@@ -1,10 +1,10 @@
 ---
 ---
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hurozo: support wedge, working preview</title>
 <style is:global>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
@@ -49,6 +49,10 @@ body{font-family:var(--body);color:var(--ink-2);background:var(--paper-2);-webki
 .note b{color:var(--ink-2);}
 .foot{margin-top:40px;font-family:var(--mono);font-size:10.5px;color:var(--ink-5);display:flex;align-items:center;gap:8px;}
 @media(max-width:860px){.grid,.grid.two{grid-template-columns:1fr;}.head h1{font-size:26px;}}
+
+/* Hurozo ledger texture, signature */
+:root{--ledger-line:rgba(0,0,0,0.055);--ledger-gap:32px;}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--ledger-gap) - 1px),var(--ledger-line) calc(var(--ledger-gap) - 1px),var(--ledger-line) var(--ledger-gap));}
 </style>
 </head>
 <body>
@@ -83,10 +87,20 @@ body{font-family:var(--body);color:var(--ink-2);background:var(--paper-2);-webki
       <a class="card" href="catalogue.html">
         <div class="ctop"><span class="cnum">03</span><span class="cgo">open &rarr;</span></div>
         <h3>Service catalogue</h3>
-        <p>All fifteen support jobs scored on value, frustration, and Hurozo edge, plus the five-stage spine that runs the whole arena end to end.</p>
+        <p>Every support job scored on value, frustration, and Hurozo edge, plus the five-stage spine that runs the whole arena end to end.</p>
         <span class="chip">the rich landscape</span>
       </a>
     </div>
+  </div>
+
+  <div class="sec">
+    <div class="sech">Try it live</div>
+    <a class="card lead" href="dashboard.html">
+      <div class="ctop"><span class="cnum">&#9670; console</span><span class="cgo">open it &rarr;</span></div>
+      <h3>The governance &amp; cost console</h3>
+      <p>The real thing, not a mockup. Click the nav, filter the audit log, approve a held action, toggle a permission, watch the model mix and the spend. This is what the homepage governance demo opens into.</p>
+      <span class="chip">interactive &middot; functional</span>
+    </a>
   </div>
 
   <div class="sec">
@@ -121,6 +135,12 @@ body{font-family:var(--body);color:var(--ink-2);background:var(--paper-2);-webki
         <h3>The platform grid</h3>
         <p>The six platform areas as living mini-mocks: Support Agents, Analytics, Signal Tracking, Routing, Governance, and the Bridge.</p>
         <span class="chip">platform of jobs</span>
+      </a>
+      <a class="card" href="trust.html">
+        <div class="ctop"><span class="cnum">09</span><span class="cgo">open &rarr;</span></div>
+        <h3>Trust &amp; security</h3>
+        <p>The page IT, Legal, and Finance sign: data residency, no training on your data, SSO, certifications, ownership, and the shadow-AI landing zone.</p>
+        <span class="chip">for the committee</span>
       </a>
     </div>
   </div>

@@ -124,6 +124,10 @@ body{font-family:var(--body);color:var(--ink-2);background:var(--paper-2);-webki
   .pgrid{grid-template-columns:1fr;}
   .legend{gap:16px;}
 }
+
+/* Hurozo ledger texture, signature */
+:root{--ledger-line:rgba(0,0,0,0.055);--ledger-gap:32px;}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--ledger-gap) - 1px),var(--ledger-line) calc(var(--ledger-gap) - 1px),var(--ledger-line) var(--ledger-gap));}
 </style>
 </head>
 <body>
@@ -358,6 +362,50 @@ body{font-family:var(--body);color:var(--ink-2);background:var(--paper-2);-webki
       <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>QA Reviewer</span></div>
       <div class="jscore">
         <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAMILY F: Run & cost -->
+  <div class="fam">
+    <div class="famh"><span class="fn">Run &amp; cost</span><span class="fs">who runs the models, and what they cost</span></div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Bring your own model</div>
+        <div class="jd">Point a crew at your own Anthropic, Google, or OpenAI contract, or a model you host. Pay the provider at cost, no markup, no lock-in.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Model Bridge</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Model mix, watched</div>
+        <div class="jd">See which models each crew runs and in what share, with the router picking the cheapest one that still clears your quality bar.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>Model Router</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
+        <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jmain">
+        <div class="jt">Cost per crew and company</div>
+        <div class="jd">What every worker, every crew, and the whole company spends on AI, on one screen, trending down as more of the desk routes through Hurozo.</div>
+      </div>
+      <div class="jworker"><span class="wl">Worker</span><span class="wk"><span class="d"></span>The Bridge</span></div>
+      <div class="jscore">
+        <span class="ax"><span class="axl">V</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
         <span class="ax"><span class="axl">F</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></span>
         <span class="ax"><span class="axl">D</span><span class="mtr hot"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
       </div>

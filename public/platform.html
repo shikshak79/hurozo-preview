@@ -66,6 +66,10 @@ body{font-family:var(--body);color:var(--ink-2);background:var(--paper-2);-webki
 
 @media(max-width:900px){.grid{grid-template-columns:1fr;}.head h1{font-size:28px;}}
 @media(max-width:900px) and (min-width:560px){.grid{grid-template-columns:1fr 1fr;}}
+
+/* Hurozo ledger texture, signature */
+:root{--ledger-line:rgba(0,0,0,0.055);--ledger-gap:32px;}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--ledger-gap) - 1px),var(--ledger-line) calc(var(--ledger-gap) - 1px),var(--ledger-line) var(--ledger-gap));}
 </style>
 </head>
 <body>

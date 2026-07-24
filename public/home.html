@@ -117,6 +117,40 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.86);backdrop-
 .pj-crm{display:grid;grid-template-columns:1fr auto auto;gap:8px;font-size:10.5px;color:var(--ink-2);align-items:center;padding:2px 0;} .pj-crm .v{font-family:var(--mono);color:var(--ink-4);}
 .pj-menu{margin-top:20px;border:1px dashed var(--rule-2);border-radius:var(--r-4);padding:18px 22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;background:var(--paper);} .pj-menu .ml{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-4);} .pj-menu .mi{font-size:13px;color:var(--ink-3);display:inline-flex;align-items:center;gap:7px;} .pj-menu .mi .d{width:5px;height:5px;border-radius:50%;background:var(--ink-4);}
 .pj-moat{margin-top:30px;border-left:2px solid var(--signal);padding:8px 0 8px 20px;max-width:760px;} .pj-moat .q{font-family:var(--display);font-weight:600;font-size:21px;letter-spacing:-0.015em;color:var(--ink);line-height:1.35;} .pj-moat .s{font-size:14px;color:var(--ink-3);margin-top:9px;}
+.pj-band{margin-top:16px;border:1px solid var(--rule);border-radius:var(--r-4);background:var(--paper);box-shadow:var(--sh-1);display:grid;grid-template-columns:1.1fr 1fr;gap:28px;padding:22px 24px;align-items:center;}
+.pj-band .pj-ai{margin-bottom:8px;} .pj-band .pj-d{max-width:none;margin-bottom:0;}
+.soon{font-family:var(--mono);font-size:9px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-4);border:1px solid var(--rule-2);border-radius:100px;padding:2px 7px;margin-left:8px;vertical-align:middle;}
+.mmix{display:flex;flex-direction:column;gap:8px;}
+.mmix .mrow{display:flex;align-items:center;gap:10px;font-size:11px;}
+.mmix .mn{width:64px;color:var(--ink-3);font-family:var(--mono);font-size:10px;}
+.mmix .mt{flex:1;height:7px;background:var(--paper-3);border-radius:100px;overflow:hidden;} .mmix .mt i{display:block;height:100%;background:var(--ink-3);border-radius:100px;}
+.mmix .mv{font-family:var(--mono);font-size:10px;color:var(--ink-2);width:32px;text-align:right;}
+.mmix .mfoot{display:flex;justify-content:space-between;align-items:center;margin-top:3px;border-top:1px solid var(--paper-3);padding-top:8px;font-family:var(--mono);font-size:9.5px;color:var(--ink-4);} .mmix .mfoot b{color:var(--ok);}
+@media(max-width:760px){.pj-band{grid-template-columns:1fr;}}
+/* governance tabbed demo */
+.gtabs{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-bottom:22px;}
+.gtab{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border:1px solid var(--rule-2);border-radius:100px;background:var(--paper);font-family:var(--body);font-weight:500;font-size:13.5px;color:var(--ink-3);cursor:pointer;transition:all 130ms;box-shadow:var(--sh-1);}
+.gtab:hover{border-color:var(--ink-3);color:var(--ink-2);} .gtab.on{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+.gtab .ga{font-family:var(--mono);font-size:9px;opacity:.55;}
+.gpanel{display:none;} .gpanel.on{display:block;animation:fade .3s ease;}
+.gwin{border:1px solid var(--rule);border-radius:var(--r-4);background:var(--paper);box-shadow:0 20px 55px -32px rgba(0,0,0,0.45);overflow:hidden;max-width:940px;margin:0 auto;}
+.gwbar{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid var(--rule);background:var(--paper-2);}
+.gwbar .lights{display:flex;gap:6px;} .gwbar .lights i{width:10px;height:10px;border-radius:50%;background:var(--rule-2);display:block;}
+.gwbar .wt{font-family:var(--mono);font-size:11px;color:var(--ink-4);}
+.gwbar .gart{margin-left:auto;font-family:var(--mono);font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--rule-2);border-radius:100px;padding:3px 9px;} .gwbar .gart b{color:var(--ink);}
+.gwbody{padding:15px 18px;}
+.gwfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;border-top:1px solid var(--rule);background:var(--paper-2);flex-wrap:wrap;} .gwfoot .note{font-size:12px;color:var(--ink-4);}
+.gmt{width:100%;border-collapse:collapse;} .gmt th{font-family:var(--mono);font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-4);text-align:left;padding:6px;border-bottom:1px solid var(--rule);font-weight:500;} .gmt td{padding:8px 6px;border-bottom:1px solid var(--paper-3);font-size:12px;color:var(--ink-2);} .gmt tr:last-child td{border-bottom:none;} .gmt td.m{font-family:var(--mono);font-size:10.5px;color:var(--ink-4);white-space:nowrap;}
+.gp{font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:100px;} .gp.ok{background:#E4F2EB;color:#1F7A4D;} .gp.hold{background:var(--signal-tint-2);color:var(--signal-press);} .gp.flag{background:#FBEFD9;color:#B45309;}
+.gappr{border:1px solid var(--rule);border-left:2px solid var(--signal);border-radius:var(--r-3);background:var(--paper-2);padding:13px 15px;}
+.gah{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:8px;} .gah .gwho{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--ink-4);font-weight:400;}
+.gab{font-size:12.5px;color:var(--ink-3);line-height:1.5;margin-bottom:11px;}
+.gaacts{display:flex;align-items:center;gap:8px;flex-wrap:wrap;} .gchk{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--ok);display:inline-flex;align-items:center;gap:6px;}
+.gcost{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:center;} @media(max-width:700px){.gcost{grid-template-columns:1fr;}}
+.gmini{display:flex;flex-direction:column;gap:9px;} .gmt2{border:1px solid var(--rule);border-radius:var(--r-3);padding:10px 12px;} .gmt2 .k{font-family:var(--mono);font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-4);margin-bottom:4px;} .gmt2 .v{font-family:var(--display);font-weight:600;font-size:19px;color:var(--ink);letter-spacing:-.02em;} .gmt2 .v small{font-size:11px;color:var(--ink-4);} .gmt2 .v em{font-style:normal;font-size:11px;color:var(--ok);font-family:var(--mono);}
+/* Hurozo ledger texture, signature */
+:root{--ledger-line:rgba(0,0,0,0.055);--ledger-gap:32px;}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--ledger-gap) - 1px),var(--ledger-line) calc(var(--ledger-gap) - 1px),var(--ledger-line) var(--ledger-gap));}
 
 /* zig-zag */
 .zig{display:flex;flex-direction:column;}
@@ -248,9 +282,21 @@ footer{border-top:1px solid var(--rule);padding:50px 0 38px;background:var(--pap
     <div class="pj-area"><div class="pj-ai"><span class="pj-icon"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 5-8 4 5"/></svg></span><h3>Signal Tracking</h3></div><div class="pj-d">Catch the surge before it floods. Which release, which feature, which bug.</div><div class="pj-mock"><div class="pj-mm"><div class="pj-spike"><span class="pj-flag">Checkout v2 &middot; +180%</span><svg viewBox="0 0 300 66" style="width:100%;height:60px"><polyline points="0,50 40,48 80,51 120,46 160,48 190,42 210,28 240,13 270,9 300,7" fill="none" stroke="var(--signal)" stroke-width="2"/><polyline points="0,50 40,48 80,51 120,46 160,48 190,42 210,28 240,13 270,9 300,7 300,66 0,66" fill="var(--signal-tint-2)"/></svg></div><div style="font-family:var(--mono);font-size:9.5px;color:var(--ink-4);margin-top:2px">inquiries by topic, over time</div></div></div></div>
     <div class="pj-area"><div class="pj-ai"><span class="pj-icon"><svg viewBox="0 0 24 24"><path d="M4 7h11M4 12h16M4 17h8"/><path d="M17 15l3 2-3 2"/></svg></span><h3>Issue Routing</h3></div><div class="pj-d">Turn an inquiry into a Jira ticket with repro steps, and see if the fix worked.</div><div class="pj-mock"><div class="pj-mm"><div class="pj-jira"><div class="pj-jr"><span class="pj-jk">BUG-4471</span><span>Checkout fails on Safari</span></div><div class="pj-jr" style="color:var(--ink-4);font-size:10px"><span class="dot done"></span>3 repro steps &middot; 41 linked inquiries</div><div class="pj-eff">&#9660; inquiries down 40% since the fix</div></div></div></div></div>
     <div class="pj-area"><div class="pj-ai"><span class="pj-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 4.5-3 8-8 9-5-1-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Governance &amp; Audit</h3></div><div class="pj-d">Permissioned, gated, logged, by default. Built for the AI Act.</div><div class="pj-mock"><div class="pj-mm"><div class="pj-sl"><span class="mono">inbox.read</span><span class="pj-tg on"></span></div><div class="pj-sl"><span class="mono">email.send</span><span class="pj-tg held"></span></div><div class="pj-sl"><span class="mono">audit trail</span><span style="font-family:var(--mono);font-size:9.5px;color:var(--ok)">every step</span></div></div></div></div>
-    <div class="pj-area"><div class="pj-ai"><span class="pj-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></span><h3>The Bridge</h3></div><div class="pj-d">Every crew&rsquo;s value, cost, and risk on one screen. You greenlight and steer.</div><div class="pj-mock"><div class="pj-mm"><div class="pj-crm" style="font-family:var(--mono);font-size:8.5px;color:var(--ink-4);text-transform:uppercase"><span>Crew</span><span class="v">cost</span><span class="v">needs you</span></div><div class="pj-crm"><span><span class="dot doing"></span> Triage</span><span class="v">&euro;3.40</span><span class="v">0</span></div><div class="pj-crm"><span><span class="dot doing"></span> First Reply</span><span class="v">&euro;2.10</span><span class="v">5</span></div><div class="pj-crm"><span><span class="dot review"></span> Escalation</span><span class="v">&euro;0.90</span><span class="v">3</span></div></div></div></div>
+    <div class="pj-area"><div class="pj-ai"><span class="pj-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></span><h3>The Bridge</h3></div><div class="pj-d">Every crew&rsquo;s value, cost, and risk on one screen. You greenlight and steer.</div><div class="pj-mock"><div class="pj-mm"><div class="pj-crm" style="font-family:var(--mono);font-size:8.5px;color:var(--ink-4);text-transform:uppercase"><span>Crew</span><span class="v">cost</span><span class="v">needs you</span></div><div class="pj-crm"><span><span class="dot doing"></span> Triage</span><span class="v">&euro;3.40</span><span class="v">0</span></div><div class="pj-crm"><span><span class="dot doing"></span> First Reply</span><span class="v">&euro;2.10</span><span class="v">5</span></div><div class="pj-crm"><span><span class="dot review"></span> Escalation</span><span class="v">&euro;0.90</span><span class="v">3</span></div><div style="margin-top:5px;padding-top:6px;border-top:1px solid var(--paper-3);display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:8.5px;color:var(--ink-4)"><span>Claude 62 &middot; Gemini 31 &middot; GPT 7</span><span>cost/1k <span style="color:var(--ok)">&#9660;12%</span></span></div></div></div></div>
   </div>
-  <div class="pj-menu"><span class="ml">More in the platform</span><span class="mi"><span class="d"></span>Knowledge &amp; Canon</span><span class="mi"><span class="d"></span>Quality &amp; CSAT</span><span class="mi"><span class="d"></span>Model Router</span><span class="mi"><span class="d"></span>API &amp; MCP</span><span class="mi"><span class="d"></span>Deflection &amp; Self-serve</span></div>
+  <div class="pj-band">
+    <div>
+      <div class="pj-ai"><span class="pj-icon"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg></span><h3>Model mix &amp; cost <span class="soon">soon</span></h3></div>
+      <p class="pj-d">Bring your own model, or use ours. See which models run, in what mix, and what each crew and the whole company spends. The router picks the cheapest model that clears your quality bar, so cost falls as you route more through Hurozo.</p>
+    </div>
+    <div class="pj-mock"><div class="pj-mm"><div class="mmix">
+      <div class="mrow"><span class="mn">Claude</span><span class="mt"><i style="width:62%"></i></span><span class="mv">62%</span></div>
+      <div class="mrow"><span class="mn">Gemini</span><span class="mt"><i style="width:31%"></i></span><span class="mv">31%</span></div>
+      <div class="mrow"><span class="mn">GPT-4o</span><span class="mt"><i style="width:7%"></i></span><span class="mv">7%</span></div>
+      <div class="mfoot"><span>router &middot; cheapest that clears the bar</span><span>cost / 1k <b>&#9660; 12%</b></span></div>
+    </div></div></div>
+  </div>
+  <div class="pj-menu"><span class="ml">More in the platform</span><span class="mi"><span class="d"></span>Knowledge &amp; Canon</span><span class="mi"><span class="d"></span>Quality &amp; CSAT</span><span class="mi"><span class="d"></span>API &amp; MCP</span><span class="mi"><span class="d"></span>Deflection &amp; Self-serve</span></div>
   <div class="pj-moat"><div class="q">One person with Claude can build one agent. A support operation you can trust, with the analytics, the tracking, the routing, and the audit, all secure and well made, is a suite.</div><div class="s">That's what you don't build in a weekend. That's what Hurozo is.</div></div>
   <div style="margin-top:22px"><a href="catalogue.html" class="btn secondary sm">See the full service catalogue &rarr;</a></div>
 </div></section>
@@ -283,14 +329,77 @@ footer{border-top:1px solid var(--rule);padding:50px 0 38px;background:var(--pap
 
 <!-- 7 GOVERNANCE (AI Act mapping) -->
 <section id="governance" class="paper2"><div class="wrap">
-  <div class="sec-head"><div class="eyebrow"><span class="label">Governance, staffed</span></div><h2 class="h2">Yes, you can let it near a customer.</h2><p class="lede">Every crew carries three workers whose whole job is to keep it safe to trust. Not a compliance add-on. Articles 12, 13, and 14, turned into staff.</p></div>
-  <div class="ga-grid">
-    <div class="ga-card"><div class="ga-top"><span class="ga-i"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span><span class="ga-art"><b>Article 12</b>Logging</span></div><div class="ga-role">The Logger</div><h3>Records everything it did</h3><p>Every message read, drafted, sent, corrected, and escalated, in real time. Your technical log for high-risk AI, ready to export.</p><div class="ga-proof"><span class="dot done"></span>1,204 actions logged this week &middot; exportable</div></div>
-    <div class="ga-card"><div class="ga-top"><span class="ga-i"><svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M9 7l-5 5 5 5"/><path d="M15 7l5 5-5 5"/></svg></span><span class="ga-art"><b>Article 14</b>Human oversight</span></div><div class="ga-role">The Secretary</div><h3>Holds the limits</h3><p>Keeps the rules, the budgets, and the gates. Defines what a worker may do alone, and where it must wait for a person.</p><div class="ga-proof"><span class="dot gate"></span>&#9670; 5 actions held for a human, right now</div></div>
-    <div class="ga-card"><div class="ga-top"><span class="ga-i"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 4.5-3 8-8 9-5-1-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="ga-art"><b>Article 13</b>Transparency</span></div><div class="ga-role">The Reviewer</div><h3>Blocks bad work</h3><p>Checks every reply against your rules before it reaches a customer, and keeps the AI-disclosure in place.</p><div class="ga-proof"><span class="dot done"></span>every reply checked &middot; disclosure on</div></div>
+  <div class="sec-head"><div class="eyebrow"><span class="label">Governance, staffed</span></div><h2 class="h2">Yes, you can let it near a customer.</h2><p class="lede">Every crew runs under workers whose whole job is to keep it safe to trust, mapped to Articles 12, 13, and 14. Watch them work, then open the live console and try it yourself.</p></div>
+  <div class="gtabs">
+    <button class="gtab on" data-g="audit" onclick="gshow('audit')"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.7;fill:none"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>Audit log <span class="ga">Art 12</span></button>
+    <button class="gtab" data-g="approvals" onclick="gshow('approvals')"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.7;fill:none"><path d="M4 12h16"/><path d="M9 7l-5 5 5 5"/><path d="M15 7l5 5-5 5"/></svg>Approvals &amp; gates <span class="ga">Art 14</span></button>
+    <button class="gtab" data-g="reviewer" onclick="gshow('reviewer')"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.7;fill:none"><path d="M12 3l8 4v5c0 4.5-3 8-8 9-5-1-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>Reviewer <span class="ga">Art 13</span></button>
+    <button class="gtab" data-g="cost" onclick="gshow('cost')"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.7;fill:none"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Cost monitor</button>
+  </div>
+
+  <div class="gpanel on" data-g="audit">
+    <div class="gwin">
+      <div class="gwbar"><span class="lights"><i></i><i></i><i></i></span><span class="wt">Hurozo Console &middot; Audit log</span><span class="gart"><b>Article 12</b> Logging</span></div>
+      <div class="gwbody"><table class="gmt">
+        <tr><th>Time</th><th>Worker</th><th>Action</th><th>Result</th></tr>
+        <tr><td class="m">09:41</td><td>Refund Drafter</td><td>drafted refund reply &middot; #4471</td><td><span class="gp hold">held</span></td></tr>
+        <tr><td class="m">09:41</td><td>Reviewer</td><td>checked vs refund-policy</td><td><span class="gp ok">pass</span></td></tr>
+        <tr><td class="m">09:40</td><td>Triage</td><td>routed to Billing &middot; #4470</td><td><span class="gp ok">done</span></td></tr>
+        <tr><td class="m">09:38</td><td>Escalation Spotter</td><td>flagged renewal risk &middot; Northwind</td><td><span class="gp hold">held</span></td></tr>
+        <tr><td class="m">09:35</td><td>Reviewer</td><td>flagged missing disclosure &middot; #4402</td><td><span class="gp flag">flag</span></td></tr>
+      </table></div>
+      <div class="gwfoot"><span class="note">1,204 actions logged this week, ready to export.</span><a class="btn sm" href="dashboard.html#audit">Open the live console &rarr;</a></div>
+    </div>
+  </div>
+
+  <div class="gpanel" data-g="approvals">
+    <div class="gwin">
+      <div class="gwbar"><span class="lights"><i></i><i></i><i></i></span><span class="wt">Hurozo Console &middot; Approvals</span><span class="gart"><b>Article 14</b> Human oversight</span></div>
+      <div class="gwbody"><div class="gappr">
+        <div class="gah"><span class="dot gate"></span>Refund &euro;48.00 &middot; damaged on arrival<span class="gwho">Refund Drafter &middot; #4471</span></div>
+        <div class="gab">Hi Marta, I&rsquo;m sorry your order arrived damaged. I&rsquo;ve approved a full refund of &euro;48.00 to your original payment method, it&rsquo;ll land in 3 to 5 days. I&rsquo;ve flagged the batch so it doesn&rsquo;t happen again.</div>
+        <div class="gaacts"><span class="btn sm">Approve &amp; send</span><span class="btn secondary sm">Hold</span><span class="gchk"><span class="dot done"></span>within policy &middot; Reviewer passed</span></div>
+      </div></div>
+      <div class="gwfoot"><span class="note">3 actions held for a human, right now. Nothing sends until you say so.</span><a class="btn sm" href="dashboard.html#approvals">Open the live console &rarr;</a></div>
+    </div>
+  </div>
+
+  <div class="gpanel" data-g="reviewer">
+    <div class="gwin">
+      <div class="gwbar"><span class="lights"><i></i><i></i><i></i></span><span class="wt">Hurozo Console &middot; Reviewer</span><span class="gart"><b>Article 13</b> Transparency</span></div>
+      <div class="gwbody"><table class="gmt">
+        <tr><th>Time</th><th>Reply</th><th>Rule</th><th>Result</th></tr>
+        <tr><td class="m">09:41</td><td>Refund confirmation &middot; #4471</td><td class="m">refund-policy</td><td><span class="gp ok">pass</span></td></tr>
+        <tr><td class="m">09:40</td><td>Devices answer &middot; #4460</td><td class="m">answer-from-canon</td><td><span class="gp ok">pass</span></td></tr>
+        <tr><td class="m">09:38</td><td>Discount reply &middot; #4419</td><td class="m">discount-limit</td><td><span class="gp flag">flag &middot; over 10%</span></td></tr>
+        <tr><td class="m">09:35</td><td>Cancellation reply &middot; #4402</td><td class="m">ai-disclosure</td><td><span class="gp flag">flag &middot; disclosure</span></td></tr>
+      </table></div>
+      <div class="gwfoot"><span class="note">Every reply checked before it reaches a customer. Disclosure kept on.</span><a class="btn sm" href="dashboard.html#reviewer">Open the live console &rarr;</a></div>
+    </div>
+  </div>
+
+  <div class="gpanel" data-g="cost">
+    <div class="gwin">
+      <div class="gwbar"><span class="lights"><i></i><i></i><i></i></span><span class="wt">Hurozo Console &middot; Cost &amp; models</span><span class="gart">cost monitor</span></div>
+      <div class="gwbody"><div class="gcost">
+        <div class="mmix">
+          <div class="mrow"><span class="mn">Claude</span><span class="mt"><i style="width:62%"></i></span><span class="mv">62% &middot; &euro;712</span></div>
+          <div class="mrow"><span class="mn">Gemini</span><span class="mt"><i style="width:31%"></i></span><span class="mv">31% &middot; &euro;301</span></div>
+          <div class="mrow"><span class="mn">GPT-4o</span><span class="mt"><i style="width:7%"></i></span><span class="mv">7% &middot; &euro;135</span></div>
+          <div class="mfoot"><span>router &middot; cheapest that clears the bar</span><span>BYO &middot; at cost</span></div>
+        </div>
+        <div class="gmini">
+          <div class="gmt2"><div class="k">spend, month</div><div class="v"><small>&euro;</small>1,148</div></div>
+          <div class="gmt2"><div class="k">cost / 1k</div><div class="v"><small>&euro;</small>18 <em>&#9660; 12%</em></div></div>
+          <div class="gmt2"><div class="k">router savings</div><div class="v"><small>&euro;</small>410</div></div>
+        </div>
+      </div></div>
+      <div class="gwfoot"><span class="note">Bring your own model, at cost. Watch the mix and the spend, per crew and company.</span><a class="btn sm" href="dashboard.html#cost">Open the live console &rarr;</a></div>
+    </div>
   </div>
   <div class="ga-bar"><div><div class="q">Permissioned, gated, logged. By default.</div><div class="qs">Not configured after the fact. On from the first run.</div></div><div class="acts"><span><span class="dot done"></span>permission walls</span><span><span class="dot done"></span>spend caps</span><span><span class="dot" style="background:var(--signal)"></span>human gates</span><span><span class="dot done"></span>full audit trail</span></div></div>
-  <div class="ga-so"><div class="ga-soc"><div class="sk">Support ships it</div><div class="sv">Faster, better first replies, on a cadence.</div></div><div class="ga-soc"><div class="sk">Legal &amp; risk sign it</div><div class="sv">A governance fabric mapped to the Act, not a promise.</div></div><div class="ga-soc"><div class="sk">IT owns it</div><div class="sv">EU-resident, your model, no vendor lock-in.</div></div></div>
+  <div class="ga-so"><div class="ga-soc"><div class="sk">Support ships it</div><div class="sv">Faster, better first replies, on a cadence.</div></div><div class="ga-soc"><div class="sk">Legal &amp; risk sign it</div><div class="sv">A governance fabric mapped to the Act, not a promise.</div></div><div class="ga-soc"><div class="sk">IT owns it</div><div class="sv">EU-resident, your model, and one governed home for every agent, so AI does not sprawl.</div></div></div>
+  <div style="margin-top:16px"><a href="trust.html" class="btn secondary sm">Trust, security, and control &rarr;</a></div>
 </div></section>
 
 <!-- 8 INTEGRATIONS -->
@@ -352,6 +461,7 @@ footer{border-top:1px solid var(--rule);padding:50px 0 38px;background:var(--pap
 <script>
 document.querySelectorAll('.tab').forEach(t=>{t.addEventListener('click',()=>{const p=t.dataset.p;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('on',x.dataset.p===p));});});
 document.querySelectorAll('.door').forEach(d=>{d.addEventListener('click',()=>{const p=d.dataset.target;const tab=document.querySelector('.tab[data-p="'+p+'"]');if(tab)tab.click();document.getElementById('demo').scrollIntoView({behavior:'smooth'});});});
+function gshow(k){document.querySelectorAll('.gpanel').forEach(p=>p.classList.toggle('on',p.dataset.g===k));document.querySelectorAll('.gtab').forEach(t=>t.classList.toggle('on',t.dataset.g===k));}
 </script>
 </body>
 </html>
