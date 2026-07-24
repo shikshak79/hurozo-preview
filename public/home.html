@@ -169,6 +169,19 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.86);backdrop-
 .ctl-gate{border-left:2px solid var(--signal);background:var(--signal-tint-2);border-radius:var(--r-2);padding:6px 9px;font-family:var(--mono);font-size:9.5px;color:var(--signal-press);text-transform:uppercase;letter-spacing:0.03em;}
 .ctl-note{font-family:var(--mono);font-size:9px;color:var(--ink-4);margin-top:6px;} .ctl-note.ok{color:var(--ok);}
 @media(max-width:820px){.ctl-grid{grid-template-columns:1fr;}}
+.gconsole{border:1px solid var(--rule);border-radius:var(--r-4);background:var(--paper);box-shadow:0 24px 60px -34px rgba(0,0,0,0.5);overflow:hidden;max-width:1000px;margin:0 auto;}
+.gcbar{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid var(--rule);background:var(--paper-2);}
+.gcbar .lights{display:flex;gap:6px;} .gcbar .lights i{width:10px;height:10px;border-radius:50%;background:var(--rule-2);display:block;}
+.gcbar .wt{font-family:var(--mono);font-size:11px;color:var(--ink-4);}
+.gcopen{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--signal-press);text-decoration:none;border-bottom:1px solid var(--signal-tint);} .gcopen:hover{border-color:var(--signal-press);}
+.gframe{width:100%;height:560px;border:none;display:block;background:var(--paper);}
+.gcontrols{max-width:1000px;margin:16px auto 0;text-align:center;font-size:13px;color:var(--ink-3);line-height:1.7;} .gcontrols a{color:var(--ink-2);border-bottom:1px solid var(--rule-2);text-decoration:none;} .gcontrols a:hover{border-color:var(--ink-2);}
+@media(max-width:820px){.gframe{height:620px;}}
+.ifilter{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:22px;}
+.ichip{font-family:var(--body);font-weight:500;font-size:13px;padding:7px 14px;border:1px solid var(--rule-2);border-radius:100px;background:var(--paper);color:var(--ink-3);cursor:pointer;transition:.13s;} .ichip:hover{border-color:var(--ink-3);color:var(--ink-2);} .ichip.on{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+.idoor{position:relative;} .icat{position:absolute;top:16px;right:16px;font-family:var(--mono);font-size:8.5px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-5);}
+.icount{text-align:center;font-family:var(--mono);font-size:11px;color:var(--ink-4);margin-top:18px;}
+.idoor.hide{display:none;}
 /* Hurozo ledger texture, signature */
 :root{--ledger-line:rgba(0,0,0,0.055);--ledger-gap:32px;}
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--ledger-gap) - 1px),var(--ledger-line) calc(var(--ledger-gap) - 1px),var(--ledger-line) var(--ledger-gap));}
@@ -242,7 +255,7 @@ footer{border-top:1px solid var(--rule);padding:50px 0 38px;background:var(--pap
 
 <nav><div class="wrap nav-in">
   <div class="nav-l"><span class="gm">H<span class="acc"></span></span><span class="wm">Hurozo</span></div>
-  <div class="nav-links"><a href="#doors">Your pain</a><a href="#demo">See it work</a><a href="#platform">Platform</a><a href="#why">Why Hurozo</a><a href="#pricing">Pricing</a></div>
+  <div class="nav-links"><a href="#demo">See it work</a><a href="#platform">Platform</a><a href="#why">Why Hurozo</a><a href="#governance">Governance</a><a href="#pricing">Pricing</a></div>
   <div class="nav-r"><a href="#" class="login">Log in</a><a href="#book" class="btn sm">Book a demo</a></div>
 </div></nav>
 
@@ -262,20 +275,9 @@ footer{border-top:1px solid var(--rule);padding:50px 0 38px;background:var(--pap
   <div class="trust"><div class="trust-in"><div class="tl"><span class="dot done"></span>Works inside the tools your team already lives in. EU-resident, built for the AI Act.</div><div class="logos"><span class="logo-ph">Zendesk</span><span class="logo-ph">Intercom</span><span class="logo-ph">Gmail</span><span class="logo-ph">Slack</span><span class="logo-ph">HubSpot</span></div></div></div>
 </div></section>
 
-<!-- 2 DOORS -->
-<section id="doors"><div class="wrap">
-  <div class="sec-head"><div class="eyebrow"><span class="label">Pick your pain</span></div><h2 class="h2">Which of these is your Tuesday?</h2><p class="lede">Pick the one that stings. It jumps you straight to that worker, running live.</p></div>
-  <div class="doors">
-    <div class="door" data-target="triage"><div class="dq">&ldquo;Eighty unread every morning.&rdquo;</div><div class="dl">Morning Triage <span class="arw">&rarr;</span></div></div>
-    <div class="door" data-target="reply"><div class="dq">&ldquo;The SLA clock is always red.&rdquo;</div><div class="dl">First Reply <span class="arw">&rarr;</span></div></div>
-    <div class="door" data-target="esc"><div class="dq">&ldquo;A churn risk, hidden in the queue.&rdquo;</div><div class="dl">Escalation Spotter <span class="arw">&rarr;</span></div></div>
-    <div class="door" data-target="crew"><div class="dq">&ldquo;No idea what the AI actually did.&rdquo;</div><div class="dl">The crew, on the record <span class="arw">&rarr;</span></div></div>
-  </div>
-</div></section>
-
 <!-- 3 SEE IT WORK -->
 <section id="demo" class="paper2"><div class="wrap">
-  <div class="sec-head center"><div class="eyebrow" style="justify-content:center"><span class="label">See it work</span></div><h2 class="h2">Watch every worker do the job, live.</h2><p class="lede">Each proves its win before it acts, shows its work in the room, and logs every decision for audit.</p></div>
+  <div class="sec-head center"><div class="eyebrow" style="justify-content:center"><span class="label">See it work</span></div><h2 class="h2">Watch every worker do the job, live.</h2><p class="lede">Eighty unread every morning, an SLA clock always red, a churn risk hidden in the queue. Pick a worker and watch: it proves its win before it acts, shows its work, and logs every decision.</p></div>
   <div class="tabs">
     <button class="tab on" data-p="triage"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Triage</button>
     <button class="tab" data-p="reply"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/></svg>First reply</button>
@@ -305,32 +307,8 @@ footer{border-top:1px solid var(--rule);padding:50px 0 38px;background:var(--pap
     <div class="pj-area"><div class="pj-ai"><span class="pj-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 4.5-3 8-8 9-5-1-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Governance &amp; Audit</h3></div><div class="pj-d">Permissioned, gated, logged, by default. Built for the AI Act.</div><div class="pj-mock"><div class="pj-mm"><div class="pj-sl"><span class="mono">inbox.read</span><span class="pj-tg on"></span></div><div class="pj-sl"><span class="mono">email.send</span><span class="pj-tg held"></span></div><div class="pj-sl"><span class="mono">audit trail</span><span style="font-family:var(--mono);font-size:9.5px;color:var(--ok)">every step</span></div></div></div></div>
     <div class="pj-area"><div class="pj-ai"><span class="pj-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></span><h3>The Bridge</h3></div><div class="pj-d">Every crew&rsquo;s value, cost, and risk on one screen. You greenlight and steer.</div><div class="pj-mock"><div class="pj-mm"><div class="pj-crm" style="font-family:var(--mono);font-size:8.5px;color:var(--ink-4);text-transform:uppercase"><span>Crew</span><span class="v">cost</span><span class="v">needs you</span></div><div class="pj-crm"><span><span class="dot doing"></span> Triage</span><span class="v">&euro;3.40</span><span class="v">0</span></div><div class="pj-crm"><span><span class="dot doing"></span> First Reply</span><span class="v">&euro;2.10</span><span class="v">5</span></div><div class="pj-crm"><span><span class="dot review"></span> Escalation</span><span class="v">&euro;0.90</span><span class="v">3</span></div><div style="margin-top:5px;padding-top:6px;border-top:1px solid var(--paper-3);display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:8.5px;color:var(--ink-4)"><span>Claude 62 &middot; Gemini 31 &middot; GPT 7</span><span>cost/1k <span style="color:var(--ok)">&#9660;12%</span></span></div></div></div></div>
   </div>
-  <div class="pj-band">
-    <div>
-      <div class="pj-ai"><span class="pj-icon"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg></span><h3>Model mix &amp; cost <span class="soon">soon</span></h3></div>
-      <p class="pj-d">Bring your own model, or use ours. See which models run, in what mix, and what each crew and the whole company spends. The router picks the cheapest model that clears your quality bar, so cost falls as you route more through Hurozo.</p>
-    </div>
-    <div class="pj-mock"><div class="pj-mm"><div class="mmix">
-      <div class="mrow"><span class="mn">Claude</span><span class="mt"><i style="width:62%"></i></span><span class="mv">62%</span></div>
-      <div class="mrow"><span class="mn">Gemini</span><span class="mt"><i style="width:31%"></i></span><span class="mv">31%</span></div>
-      <div class="mrow"><span class="mn">GPT-4o</span><span class="mt"><i style="width:7%"></i></span><span class="mv">7%</span></div>
-      <div class="mfoot"><span>router &middot; cheapest that clears the bar</span><span>cost / 1k <b>&#9660; 12%</b></span></div>
-    </div></div></div>
-  </div>
-  <div class="pj-menu"><span class="ml">More in the platform</span><span class="mi"><span class="d"></span>Knowledge &amp; Canon</span><span class="mi"><span class="d"></span>Quality &amp; CSAT</span><span class="mi"><span class="d"></span>API &amp; MCP</span><span class="mi"><span class="d"></span>Deflection &amp; Self-serve</span></div>
   <div class="pj-moat"><div class="q">One person with Claude can build one agent. A support operation you can trust, with the analytics, the tracking, the routing, and the audit, all secure and well made, is a suite.</div><div class="s">That's what you don't build in a weekend. That's what Hurozo is.</div></div>
   <div style="margin-top:22px"><a href="catalogue.html" class="btn secondary sm">See the full service catalogue &rarr;</a></div>
-</div></section>
-
-<!-- 5 HOW IT WORKS (zig-zag) -->
-<section id="how" class="paper2"><div class="wrap">
-  <div class="sec-head"><div class="eyebrow"><span class="label">How it works</span></div><h2 class="h2">The part the black box will never do.</h2><p class="lede">Any tool can answer a ticket. Here's what makes a Hurozo crew one you can own, trust, and keep getting more out of.</p></div>
-  <div class="zig">
-    <div class="zrow"><div class="ztxt"><div class="zn"><span class="ln"></span>01</div><h3>One source of truth, kept current.</h3><p>Your rules and knowledge live in one place, maintained over time, not scattered across a dozen prompts. When a worker drifts out of line with the canon, <b>Hurozo notices and flags it</b> before it reaches a customer.</p></div><div class="zvis"><div class="zmock"><div class="zbar">Canon &middot; Support</div><div class="zbody"><div class="frow"><span class="dot done"></span><span class="fn">refund-policy.md</span><span class="ok">in sync</span></div><div class="frow"><span class="dot done"></span><span class="fn">tone-and-voice.md</span><span class="ok">in sync</span></div><div class="frow drift"><span class="dot review"></span><span class="fn">escalation-rules.md</span><span class="flag">drift flagged</span></div><div class="frow"><span class="dot done"></span><span class="fn">product-facts.md</span><span class="ok">in sync</span></div></div></div></div></div>
-    <div class="zrow"><div class="ztxt"><div class="zn"><span class="ln"></span>02</div><h3>Workers that get better, and prove it.</h3><p>Every correction you make becomes a rule the worker carries forward. It evolves on its own results, so quality climbs run over run, and <b>you can see it climb</b>, not just take our word for it.</p></div><div class="zvis"><div class="zmock"><div class="zbar">First Reply &middot; 6 weeks</div><div class="zbody"><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><div><div class="label" style="margin-bottom:5px">Rework rate</div><div class="curveval">31% <b>&rarr;</b> 4%</div></div><div class="trendm">&#9660; 27pt</div></div><svg viewBox="0 0 340 54" style="width:100%;height:50px"><polyline points="0,7 48,15 96,20 150,30 200,38 250,44 300,48 340,50" fill="none" stroke="var(--dot-done)" stroke-width="2"/><polyline points="0,7 48,15 96,20 150,30 200,38 250,44 300,48 340,50 340,54 0,54" fill="var(--ok-tint)" opacity="0.5"/></svg></div></div></div></div>
-    <div class="zrow"><div class="ztxt"><div class="zn"><span class="ln"></span>03</div><h3>Build it in Claude. Bring it here.</h3><p>Prototype a worker where you already experiment, in Claude, then import it into Hurozo in one step. It runs the same, now inside permission walls, gates, and an audit trail. <b>The governed landing zone for the agents you already build.</b></p></div><div class="zvis"><div class="zmock"><div class="zbar">Import worker</div><div class="zbody"><div class="imp"><div class="impbox"><div class="t">Claude</div><div class="s">tested</div></div><span class="imparr">&rarr;</span><div class="impbox"><div class="t">Import</div><div class="s">one step</div></div><span class="imparr">&rarr;</span><div class="impbox live"><div class="t">Governed</div><div class="s">production</div></div></div><div style="margin-top:12px;font-family:var(--mono);font-size:10px;color:var(--ink-4)">rules, tools, and knowledge come with it</div></div></div></div></div>
-    <div class="zrow"><div class="ztxt"><div class="zn"><span class="ln"></span>04</div><h3>Owned, and it doesn't leave.</h3><p>The workers, the canon, and the proof are yours, the system of record for how your support runs. Export it, fork it, keep it. <b>If you ever leave, you leave with everything.</b> EU-resident, your own model, no lock-in.</p></div><div class="zvis"><div class="zmock"><div class="zbar">Yours</div><div class="zbody"><div class="eurow"><span class="v">Your workers</span><span style="font-family:var(--mono);color:var(--ok);font-size:11px">yours</span></div><div class="eurow"><span class="v">Your canon and rules</span><span style="font-family:var(--mono);color:var(--ok);font-size:11px">yours</span></div><div class="eurow"><span class="v">Your audit trail and proof</span><span style="font-family:var(--mono);color:var(--ok);font-size:11px">yours</span></div><div class="eurow"><span class="k">residency &middot; model</span><span class="zchips"><span class="zchip">EU</span><span class="zchip">BYO</span></span></div></div></div></div></div>
-  </div>
 </div></section>
 
 <!-- 6 WHY HUROZO (whiteboard, reweighted: ownership/audit/suite lead, geography lower) -->
@@ -348,169 +326,60 @@ footer{border-top:1px solid var(--rule);padding:50px 0 38px;background:var(--pap
   </div>
 </div></section>
 
-<!-- 7 GOVERNANCE (AI Act mapping) -->
+<!-- 7 GOVERNANCE (consolidated control-plane demo, embeds the live console) -->
 <section id="governance" class="paper2"><div class="wrap">
-  <div class="sec-head"><div class="eyebrow"><span class="label">Governance, staffed</span></div><h2 class="h2">Yes, you can let it near a customer.</h2><p class="lede">Every crew runs under workers whose whole job is to keep it safe to trust, mapped to Articles 12, 13, and 14. Watch them work, then open the live console and try it yourself.</p></div>
+  <div class="sec-head"><div class="eyebrow"><span class="label">Governance, staffed</span></div><h2 class="h2">Yes, you can let it near a customer.</h2><p class="lede">This is the console your team runs, embedded right here. Real audit, real gates, real cost. Switch the view, filter the log, approve a held action, it all works. Nothing on this page is a mockup.</p></div>
   <div class="gtabs">
-    <button class="gtab on" data-g="audit" onclick="gshow('audit')"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.7;fill:none"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>Audit log <span class="ga">Art 12</span></button>
-    <button class="gtab" data-g="approvals" onclick="gshow('approvals')"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.7;fill:none"><path d="M4 12h16"/><path d="M9 7l-5 5 5 5"/><path d="M15 7l5 5-5 5"/></svg>Approvals &amp; gates <span class="ga">Art 14</span></button>
-    <button class="gtab" data-g="reviewer" onclick="gshow('reviewer')"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.7;fill:none"><path d="M12 3l8 4v5c0 4.5-3 8-8 9-5-1-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>Reviewer <span class="ga">Art 13</span></button>
-    <button class="gtab" data-g="cost" onclick="gshow('cost')"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.7;fill:none"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Cost monitor</button>
+    <button class="gtab on" data-v="evidence" data-title="Audit &amp; evidence" onclick="gload(this)">Audit &amp; evidence <span class="ga">Art 12/13</span></button>
+    <button class="gtab" data-v="approvals" data-title="Approvals &amp; gates" onclick="gload(this)">Approvals &amp; gates <span class="ga">Art 14</span></button>
+    <button class="gtab" data-v="cost" data-title="Cost &amp; models" onclick="gload(this)">Cost &amp; models</button>
+    <button class="gtab" data-v="roi" data-title="ROI &amp; budgets" onclick="gload(this)">ROI &amp; budgets</button>
+    <button class="gtab" data-v="permissions" data-title="Permissions" onclick="gload(this)">Permissions</button>
+    <button class="gtab" data-v="canon" data-title="Compounding canon" onclick="gload(this)">Canon</button>
   </div>
-
-  <div class="gpanel on" data-g="audit">
-    <div class="gwin">
-      <div class="gwbar"><span class="lights"><i></i><i></i><i></i></span><span class="wt">Hurozo Console &middot; Audit log</span><span class="gart"><b>Article 12</b> Logging</span></div>
-      <div class="gwbody"><table class="gmt">
-        <tr><th>Time</th><th>Worker</th><th>Action</th><th>Result</th></tr>
-        <tr><td class="m">09:41</td><td>Refund Drafter</td><td>drafted refund reply &middot; #4471</td><td><span class="gp hold">held</span></td></tr>
-        <tr><td class="m">09:41</td><td>Reviewer</td><td>checked vs refund-policy</td><td><span class="gp ok">pass</span></td></tr>
-        <tr><td class="m">09:40</td><td>Triage</td><td>routed to Billing &middot; #4470</td><td><span class="gp ok">done</span></td></tr>
-        <tr><td class="m">09:38</td><td>Escalation Spotter</td><td>flagged renewal risk &middot; Northwind</td><td><span class="gp hold">held</span></td></tr>
-        <tr><td class="m">09:35</td><td>Reviewer</td><td>flagged missing disclosure &middot; #4402</td><td><span class="gp flag">flag</span></td></tr>
-      </table></div>
-      <div class="gwfoot"><span class="note">1,204 actions logged this week, ready to export.</span><a class="btn sm" href="dashboard.html#audit">Open the live console &rarr;</a></div>
-    </div>
+  <div class="gconsole">
+    <div class="gcbar"><span class="lights"><i></i><i></i><i></i></span><span class="wt">Hurozo Console &middot; <span id="gctitle">Audit &amp; evidence</span></span><a id="gcopen" class="gcopen" href="dashboard.html#evidence" target="_blank">Open the full console &rarr;</a></div>
+    <iframe id="gframe" class="gframe" src="dashboard.html?embed=1#evidence" title="Hurozo console" loading="lazy"></iframe>
   </div>
-
-  <div class="gpanel" data-g="approvals">
-    <div class="gwin">
-      <div class="gwbar"><span class="lights"><i></i><i></i><i></i></span><span class="wt">Hurozo Console &middot; Approvals</span><span class="gart"><b>Article 14</b> Human oversight</span></div>
-      <div class="gwbody"><div class="gappr">
-        <div class="gah"><span class="dot gate"></span>Refund &euro;48.00 &middot; damaged on arrival<span class="gwho">Refund Drafter &middot; #4471</span></div>
-        <div class="gab">Hi Marta, I&rsquo;m sorry your order arrived damaged. I&rsquo;ve approved a full refund of &euro;48.00 to your original payment method, it&rsquo;ll land in 3 to 5 days. I&rsquo;ve flagged the batch so it doesn&rsquo;t happen again.</div>
-        <div class="gaacts"><span class="btn sm">Approve &amp; send</span><span class="btn secondary sm">Hold</span><span class="gchk"><span class="dot done"></span>within policy &middot; Reviewer passed</span></div>
-      </div></div>
-      <div class="gwfoot"><span class="note">3 actions held for a human, right now. Nothing sends until you say so.</span><a class="btn sm" href="dashboard.html#approvals">Open the live console &rarr;</a></div>
-    </div>
-  </div>
-
-  <div class="gpanel" data-g="reviewer">
-    <div class="gwin">
-      <div class="gwbar"><span class="lights"><i></i><i></i><i></i></span><span class="wt">Hurozo Console &middot; Reviewer</span><span class="gart"><b>Article 13</b> Transparency</span></div>
-      <div class="gwbody"><table class="gmt">
-        <tr><th>Time</th><th>Reply</th><th>Rule</th><th>Result</th></tr>
-        <tr><td class="m">09:41</td><td>Refund confirmation &middot; #4471</td><td class="m">refund-policy</td><td><span class="gp ok">pass</span></td></tr>
-        <tr><td class="m">09:40</td><td>Devices answer &middot; #4460</td><td class="m">answer-from-canon</td><td><span class="gp ok">pass</span></td></tr>
-        <tr><td class="m">09:38</td><td>Discount reply &middot; #4419</td><td class="m">discount-limit</td><td><span class="gp flag">flag &middot; over 10%</span></td></tr>
-        <tr><td class="m">09:35</td><td>Cancellation reply &middot; #4402</td><td class="m">ai-disclosure</td><td><span class="gp flag">flag &middot; disclosure</span></td></tr>
-      </table></div>
-      <div class="gwfoot"><span class="note">Every reply checked before it reaches a customer. Disclosure kept on.</span><a class="btn sm" href="dashboard.html#reviewer">Open the live console &rarr;</a></div>
-    </div>
-  </div>
-
-  <div class="gpanel" data-g="cost">
-    <div class="gwin">
-      <div class="gwbar"><span class="lights"><i></i><i></i><i></i></span><span class="wt">Hurozo Console &middot; Cost &amp; models</span><span class="gart">cost monitor</span></div>
-      <div class="gwbody"><div class="gcost">
-        <div class="mmix">
-          <div class="mrow"><span class="mn">Claude</span><span class="mt"><i style="width:62%"></i></span><span class="mv">62% &middot; &euro;712</span></div>
-          <div class="mrow"><span class="mn">Gemini</span><span class="mt"><i style="width:31%"></i></span><span class="mv">31% &middot; &euro;301</span></div>
-          <div class="mrow"><span class="mn">GPT-4o</span><span class="mt"><i style="width:7%"></i></span><span class="mv">7% &middot; &euro;135</span></div>
-          <div class="mfoot"><span>router &middot; cheapest that clears the bar</span><span>BYO &middot; at cost</span></div>
-        </div>
-        <div class="gmini">
-          <div class="gmt2"><div class="k">spend, month</div><div class="v"><small>&euro;</small>1,148</div></div>
-          <div class="gmt2"><div class="k">cost / 1k</div><div class="v"><small>&euro;</small>18 <em>&#9660; 12%</em></div></div>
-          <div class="gmt2"><div class="k">router savings</div><div class="v"><small>&euro;</small>410</div></div>
-        </div>
-      </div></div>
-      <div class="gwfoot"><span class="note">Bring your own model, at cost. Watch the mix and the spend, per crew and company.</span><a class="btn sm" href="dashboard.html#cost">Open the live console &rarr;</a></div>
-    </div>
-  </div>
-  <div class="ctl-head">
-    <h3>The controls that make it safe.</h3>
-    <p>Permissioned, gated, logged, by default, on from the first run. Six controls run under every crew, and you can open each one live.</p>
-  </div>
-  <div class="ctl-grid">
-
-    <div class="ctl">
-      <div class="ctl-t"><span class="ctl-i"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><h4>Permission walls</h4></div>
-      <div class="ctl-d">Each worker gets exactly the capabilities it needs. Nothing more.</div>
-      <div class="ctl-m">
-        <div class="ctl-row"><span class="ctl-mono">inbox.read</span><span class="ctl-tg on"></span></div>
-        <div class="ctl-row"><span class="ctl-mono">reply.draft</span><span class="ctl-tg on"></span></div>
-        <div class="ctl-row"><span class="ctl-mono">email.send</span><span class="ctl-tg held"></span></div>
-        <div class="ctl-row"><span class="ctl-mono">plan.change</span><span class="ctl-tg off"></span></div>
-      </div>
-      <a class="ctl-link" href="dashboard.html#permissions">see it live &rarr;</a>
-    </div>
-
-    <div class="ctl">
-      <div class="ctl-t"><span class="ctl-i"><svg viewBox="0 0 24 24"><path d="M4 20a8 8 0 1 1 16 0"/><path d="M12 20l4-6"/></svg></span><h4>Spend caps</h4></div>
-      <div class="ctl-d">A budget per crew and per department, with alerts before it runs hot.</div>
-      <div class="ctl-m">
-        <div class="ctl-row"><span class="ctl-mono">Support</span><span class="r">&euro;2,140 / &euro;3,000</span></div>
-        <div class="ctl-bar"><i style="width:71%"></i></div>
-        <div class="ctl-row"><span class="ctl-mono">Success</span><span class="r" style="color:var(--signal-press)">85% &middot; alert</span></div>
-        <div class="ctl-bar"><i class="warn" style="width:85%"></i></div>
-      </div>
-      <a class="ctl-link" href="dashboard.html#roi">see it live &rarr;</a>
-    </div>
-
-    <div class="ctl">
-      <div class="ctl-t"><span class="ctl-i"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg></span><h4>Human gates</h4></div>
-      <div class="ctl-d">Nothing high-stakes sends without a person. The gate is on by default.</div>
-      <div class="ctl-m">
-        <div class="ctl-row"><span class="ctl-mono">Refund &euro;48.00 drafted</span><span class="r">held</span></div>
-        <div class="ctl-gate" style="margin-top:6px"><span style="color:var(--signal)">&#9670;</span> your call &middot; approve &amp; send</div>
-      </div>
-      <a class="ctl-link" href="dashboard.html#approvals">see it live &rarr;</a>
-    </div>
-
-    <div class="ctl">
-      <div class="ctl-t"><span class="ctl-i"><svg viewBox="0 0 24 24"><path d="M4 7h11M4 12h16M4 17h8"/><path d="M17 15l3 2-3 2"/></svg></span><h4>Model router</h4></div>
-      <div class="ctl-d">The right model for each job, at the lowest cost that clears your bar.</div>
-      <div class="ctl-m">
-        <div class="ctl-mm"><span class="bn">Claude</span><span class="bt"><i style="width:62%"></i></span><span class="bv">62%</span></div>
-        <div class="ctl-mm"><span class="bn">Gemini</span><span class="bt"><i style="width:31%"></i></span><span class="bv">31%</span></div>
-        <div class="ctl-mm"><span class="bn">GPT-4o</span><span class="bt"><i style="width:7%"></i></span><span class="bv">7%</span></div>
-        <div class="ctl-note">cheapest that clears the bar &middot; cost/1k &#9660;12%</div>
-      </div>
-      <a class="ctl-link" href="dashboard.html#cost">see it live &rarr;</a>
-    </div>
-
-    <div class="ctl">
-      <div class="ctl-t"><span class="ctl-i"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span><h4>Audit trail</h4></div>
-      <div class="ctl-d">Every action a worker took, captured in real time, ready to export.</div>
-      <div class="ctl-m">
-        <div class="ctl-row"><span class="ctl-mono">drafted refund</span><span class="r">held</span></div>
-        <div class="ctl-row"><span class="ctl-mono">checked vs policy</span><span class="r" style="color:var(--ok)">pass</span></div>
-        <div class="ctl-row"><span class="ctl-mono">routed #4470</span><span class="r">done</span></div>
-        <div class="ctl-note">every step &middot; exportable &middot; Art 12</div>
-      </div>
-      <a class="ctl-link" href="dashboard.html#audit">see it live &rarr;</a>
-    </div>
-
-    <div class="ctl">
-      <div class="ctl-t"><span class="ctl-i"><svg viewBox="0 0 24 24"><path d="M12 3l8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4M4 16l8 4 8-4"/></svg></span><h4>Compounding canon</h4></div>
-      <div class="ctl-d">One source of truth that learns from every correction, and flags its own drift.</div>
-      <div class="ctl-m">
-        <div class="ctl-row"><span class="ctl-mono"><span class="dot done"></span>refund-policy.md</span><span class="r" style="color:var(--ok)">in sync</span></div>
-        <div class="ctl-row"><span class="ctl-mono"><span class="dot review"></span>escalation-rules.md</span><span class="r" style="color:var(--signal-press)">drift flagged</span></div>
-        <div class="ctl-note ok">&#9660; rework 31% to 4% over 6 weeks</div>
-      </div>
-      <a class="ctl-link" href="how-it-works.html">see it live &rarr;</a>
-    </div>
-
-  </div>
+  <div class="gcontrols">Six controls run under every crew: <a href="dashboard.html#permissions">permission walls</a>, <a href="dashboard.html#roi">spend caps</a>, <a href="dashboard.html#approvals">human gates</a>, <a href="dashboard.html#cost">model router</a>, <a href="dashboard.html#evidence">audit trail</a>, and <a href="dashboard.html#canon">compounding canon</a>. Open any one live.</div>
   <div class="ga-so"><div class="ga-soc"><div class="sk">Support ships it</div><div class="sv">Faster, better first replies, on a cadence.</div></div><div class="ga-soc"><div class="sk">Legal &amp; risk sign it</div><div class="sv">A governance fabric mapped to the Act, not a promise.</div></div><div class="ga-soc"><div class="sk">IT owns it</div><div class="sv">EU-resident, your model, and one governed home for every agent, so AI does not sprawl.</div></div></div>
   <div style="margin-top:16px"><a href="trust.html" class="btn secondary sm">Trust, security, and control &rarr;</a></div>
 </div></section>
 
 <!-- 8 INTEGRATIONS -->
 <section id="integrations"><div class="wrap">
-  <div class="sec-head"><div class="eyebrow"><span class="label">Integrations</span></div><h2 class="h2">Works inside the tools your team already lives in.</h2><p class="lede">No rip and replace. Point a worker at your help desk, your inbox, and your chat, and here is what it does in each.</p></div>
-  <div class="intg">
-    <div class="idoor"><div class="il"><span class="inm">Zendesk</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>reads and tags tickets</span><span><span class="dt"></span>drafts replies behind a gate</span><span><span class="dt"></span>keeps your macros current</span></div></div>
-    <div class="idoor"><div class="il"><span class="inm">Intercom</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>reads conversations</span><span><span class="dt"></span>drafts and tags</span><span><span class="dt"></span>works alongside Fin</span></div></div>
-    <div class="idoor"><div class="il"><span class="inm">Gmail</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>reads the shared inbox</span><span><span class="dt"></span>drafts the reply</span><span><span class="dt"></span>sends only on approval</span></div></div>
-    <div class="idoor"><div class="il"><span class="inm">Slack</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>pings the right person</span><span><span class="dt"></span>posts the daily digest</span><span><span class="dt"></span>takes approvals inline</span></div></div>
-    <div class="idoor"><div class="il"><span class="inm">HubSpot</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>pulls account context</span><span><span class="dt"></span>into every reply</span><span><span class="dt"></span>logs the touch back</span></div></div>
-    <div class="idoor"><div class="il"><span class="inm">Jira</span><span class="ib" style="color:var(--warn)">soon</span></div><div class="idoes"><span><span class="dt"></span>files the bug from a ticket</span><span><span class="dt"></span>with steps to reproduce</span><span><span class="dt"></span>links it to the customer</span></div></div>
-    <div class="idoor"><div class="il"><span class="inm">Notion</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>reads your help docs</span><span><span class="dt"></span>answers cited to source</span><span><span class="dt"></span>flags what is out of date</span></div></div>
-    <div class="idoor"><div class="il"><span class="inm">Front</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>reads the shared inbox</span><span><span class="dt"></span>drafts and assigns</span><span><span class="dt"></span>every action logged</span></div></div>
+  <div class="sec-head"><div class="eyebrow"><span class="label">Integrations</span></div><h2 class="h2">Works inside the tools your team already lives in.</h2><p class="lede">No rip and replace. Point a worker at your help desk, inbox, chat, docs, or dev tools. Filter to see what it does in each.</p></div>
+  <div class="ifilter">
+    <button class="ichip on" data-f="all" onclick="ifilter(this)">All</button>
+    <button class="ichip" data-f="helpdesk" onclick="ifilter(this)">Help desk</button>
+    <button class="ichip" data-f="inbox" onclick="ifilter(this)">Inbox</button>
+    <button class="ichip" data-f="chat" onclick="ifilter(this)">Chat</button>
+    <button class="ichip" data-f="dev" onclick="ifilter(this)">Dev &amp; issues</button>
+    <button class="ichip" data-f="docs" onclick="ifilter(this)">Docs</button>
+    <button class="ichip" data-f="crm" onclick="ifilter(this)">CRM</button>
   </div>
+  <div class="intg">
+    <div class="idoor" data-cat="helpdesk"><div class="il"><span class="inm">Zendesk</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>reads and tags tickets</span><span><span class="dt"></span>drafts replies behind a gate</span></div><span class="icat">help desk</span></div>
+    <div class="idoor" data-cat="helpdesk"><div class="il"><span class="inm">Intercom</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>reads conversations</span><span><span class="dt"></span>works alongside Fin</span></div><span class="icat">help desk</span></div>
+    <div class="idoor" data-cat="helpdesk"><div class="il"><span class="inm">Freshdesk</span><span class="ib" style="color:var(--warn)">soon</span></div><div class="idoes"><span><span class="dt"></span>reads and tags tickets</span><span><span class="dt"></span>drafts replies within policy</span></div><span class="icat">help desk</span></div>
+    <div class="idoor" data-cat="helpdesk"><div class="il"><span class="inm">Help Scout</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>reads the mailbox</span><span><span class="dt"></span>drafts and assigns</span></div><span class="icat">help desk</span></div>
+    <div class="idoor" data-cat="helpdesk"><div class="il"><span class="inm">Gorgias</span><span class="ib" style="color:var(--warn)">soon</span></div><div class="idoes"><span><span class="dt"></span>reads tickets</span><span><span class="dt"></span>drafts within policy</span></div><span class="icat">help desk</span></div>
+    <div class="idoor" data-cat="inbox"><div class="il"><span class="inm">Gmail</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>reads the shared inbox</span><span><span class="dt"></span>sends only on approval</span></div><span class="icat">inbox</span></div>
+    <div class="idoor" data-cat="inbox"><div class="il"><span class="inm">Outlook</span><span class="ib" style="color:var(--warn)">soon</span></div><div class="idoes"><span><span class="dt"></span>reads the shared inbox</span><span><span class="dt"></span>drafts the reply</span></div><span class="icat">inbox</span></div>
+    <div class="idoor" data-cat="inbox"><div class="il"><span class="inm">Front</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>reads the shared inbox</span><span><span class="dt"></span>every action logged</span></div><span class="icat">inbox</span></div>
+    <div class="idoor" data-cat="chat"><div class="il"><span class="inm">Slack</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>pings the right person</span><span><span class="dt"></span>takes approvals inline</span></div><span class="icat">chat</span></div>
+    <div class="idoor" data-cat="chat"><div class="il"><span class="inm">Microsoft Teams</span><span class="ib" style="color:var(--warn)">soon</span></div><div class="idoes"><span><span class="dt"></span>posts the daily digest</span><span><span class="dt"></span>takes approvals inline</span></div><span class="icat">chat</span></div>
+    <div class="idoor" data-cat="chat"><div class="il"><span class="inm">WhatsApp</span><span class="ib" style="color:var(--warn)">soon</span></div><div class="idoes"><span><span class="dt"></span>reads and drafts</span><span><span class="dt"></span>held at your gate</span></div><span class="icat">chat</span></div>
+    <div class="idoor" data-cat="dev"><div class="il"><span class="inm">Jira</span><span class="ib" style="color:var(--warn)">soon</span></div><div class="idoes"><span><span class="dt"></span>files the bug with repro steps</span><span><span class="dt"></span>links it to the customer</span></div><span class="icat">dev &amp; issues</span></div>
+    <div class="idoor" data-cat="dev"><div class="il"><span class="inm">Linear</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>opens an issue from a ticket</span><span><span class="dt"></span>tracks the fix</span></div><span class="icat">dev &amp; issues</span></div>
+    <div class="idoor" data-cat="dev"><div class="il"><span class="inm">GitHub</span><span class="ib" style="color:var(--warn)">soon</span></div><div class="idoes"><span><span class="dt"></span>links a ticket to a PR</span><span><span class="dt"></span>closes the loop</span></div><span class="icat">dev &amp; issues</span></div>
+    <div class="idoor" data-cat="docs"><div class="il"><span class="inm">Notion</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>answers cited to source</span><span><span class="dt"></span>flags stale docs</span></div><span class="icat">docs</span></div>
+    <div class="idoor" data-cat="docs"><div class="il"><span class="inm">Confluence</span><span class="ib" style="color:var(--warn)">soon</span></div><div class="idoes"><span><span class="dt"></span>answers from your space</span><span><span class="dt"></span>cited to the page</span></div><span class="icat">docs</span></div>
+    <div class="idoor" data-cat="docs"><div class="il"><span class="inm">Google Drive</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>reads your help docs</span><span><span class="dt"></span>cites the file</span></div><span class="icat">docs</span></div>
+    <div class="idoor" data-cat="crm"><div class="il"><span class="inm">HubSpot</span><span class="ib">live</span></div><div class="idoes"><span><span class="dt"></span>pulls account context</span><span><span class="dt"></span>logs the touch back</span></div><span class="icat">crm</span></div>
+    <div class="idoor" data-cat="crm"><div class="il"><span class="inm">Salesforce</span><span class="ib" style="color:var(--warn)">soon</span></div><div class="idoes"><span><span class="dt"></span>pulls account context</span><span><span class="dt"></span>writes the activity</span></div><span class="icat">crm</span></div>
+  </div>
+  <div class="icount">19 connectors and growing, plus an open API and MCP. Point a worker at any of them, no rip and replace.</div>
   <div class="byo">Bring your own model too: <b>Anthropic, Google, OpenAI,</b> or a model you host yourself. Or use ours, at a small markup and routed for efficiency. Never locked to one.</div>
 </div></section>
 
@@ -557,7 +426,8 @@ footer{border-top:1px solid var(--rule);padding:50px 0 38px;background:var(--pap
 <script>
 document.querySelectorAll('.tab').forEach(t=>{t.addEventListener('click',()=>{const p=t.dataset.p;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('on',x.dataset.p===p));});});
 document.querySelectorAll('.door').forEach(d=>{d.addEventListener('click',()=>{const p=d.dataset.target;const tab=document.querySelector('.tab[data-p="'+p+'"]');if(tab)tab.click();document.getElementById('demo').scrollIntoView({behavior:'smooth'});});});
-function gshow(k){document.querySelectorAll('.gpanel').forEach(p=>p.classList.toggle('on',p.dataset.g===k));document.querySelectorAll('.gtab').forEach(t=>t.classList.toggle('on',t.dataset.g===k));}
+function gload(btn){var v=btn.dataset.v;document.querySelectorAll('.gtab').forEach(t=>t.classList.toggle('on',t===btn));var f=document.getElementById('gframe');if(f)f.src='dashboard.html?embed=1#'+v;var t=document.getElementById('gctitle');if(t)t.textContent=btn.dataset.title;var o=document.getElementById('gcopen');if(o)o.href='dashboard.html#'+v;}
+function ifilter(btn){var f=btn.dataset.f;document.querySelectorAll('.ichip').forEach(c=>c.classList.toggle('on',c===btn));document.querySelectorAll('#integrations .idoor').forEach(d=>{d.classList.toggle('hide', f!=='all' && d.dataset.cat!==f);});}
 </script>
 </body>
 </html>
